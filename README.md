@@ -1,13 +1,16 @@
-# weather-dashboard
+# Weather Dashboard 
 
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+## Purpose
+This website allows you to see current and future weather conditions for cities that you desire. Just search your city, and you will get the current conditions + a 5 day weather forecast! This includes the UV, wind speeds, temperature, and more. 
+
+![alt text](./Assets/Screen%20Shot%202022-09-07%20at%207.43.42%20PM.png) 
+## Built With
+* HTML
+* CSS
+* JavaScript
+
+## Website
+https://kristacannady.github.io/weather-dashboard/
+
+## Contribution
+Made with ❤️ by Krista Cannady
