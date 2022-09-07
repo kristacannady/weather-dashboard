@@ -16,13 +16,13 @@ h1 {
 #cityDetail,
 #uvIndexColor,
 li {
-    color: #4D4F53!important;
+    color: red!important;
 }
 
 #searchResults,
 #cityDetail,
 .card {
-    background-color: #5A6C73!important;
+    background-color: pink!important;
 }
 
 #searchResults {
@@ -39,7 +39,7 @@ li {
 }
 
 p {
-    color: #D9B779;
+    color: black;
 }
 
 h1, h2, h3, h4, h5 {
@@ -52,7 +52,7 @@ h2, h3, h4, h5 {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #97A6A4;
+    background-color: black;
 }
 
 
