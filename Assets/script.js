@@ -4,7 +4,7 @@ var searchHistoryList = [];
 
 // function for current condition
 function currentCondition(city) {
-
+// API! 
     var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
     $.ajax({
@@ -19,13 +19,7 @@ function currentCondition(city) {
         var iconCode = cityWeatherResponse.weather[0].icon;
         var iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
 
-        // WHEN I view current weather conditions for that city
-        // THEN I am presented with the city name
-        // the date
-        // an icon representation of weather conditions
-        // the temperature
-        // the humidity
-        // the wind speed
+// Wind Speed, Temp, Humidity information
         var currentCity = $(`
             <h2 id="currentCity">
                 ${cityWeatherResponse.name} ${today} <img src="${iconURL}" alt="${cityWeatherResponse.weather[0].description}" />
@@ -59,9 +53,7 @@ function currentCondition(city) {
 
             futureCondition(lat, lon);
 
-            // WHEN I view the UV index
-            // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-            // 0-2 green#3EA72D, 3-5 yellow#FFF300, 6-7 orange#F18B00, 8-10 red#E53210, 11+violet#B567A4
+// COLORS for the UV 
             if (uvIndex >= 0 && uvIndex <= 2) {
                 $("#uvIndexColor").css("background-color", "#3EA72D").css("color", "white");
             } else if (uvIndex >= 3 && uvIndex <= 5) {
@@ -77,10 +69,10 @@ function currentCondition(city) {
     });
 }
 
-// function for future condition
+// future conditions
 function futureCondition(lat, lon) {
 
-    // THEN I am presented with a 5-day forecast
+//  5-day forecast API!! 
     var futureURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${apiKey}`;
 
     $.ajax({
@@ -101,10 +93,6 @@ function futureCondition(lat, lon) {
             var currDate = moment.unix(cityInfo.date).format("MM/DD/YYYY");
             var iconURL = `<img src="https://openweathermap.org/img/w/${cityInfo.icon}.png" alt="${futureResponse.daily[i].weather[0].main}" />`;
 
-            // displays the date
-            // an icon representation of weather conditions
-            // the temperature
-            // the humidity
             var futureCard = $(`
                 <div class="pl-3">
                     <div class="card pl-3 pt-3 mb-3 bg-primary text-light" style="width: 12rem;>
@@ -123,7 +111,7 @@ function futureCondition(lat, lon) {
     }); 
 }
 
-// add on click event listener 
+// add on click event listener
 $("#searchBtn").on("click", function(event) {
     event.preventDefault();
 
@@ -141,15 +129,13 @@ $("#searchBtn").on("click", function(event) {
     console.log(searchHistoryList);
 });
 
-// WHEN I click on a city in the search history
-// THEN I am again presented with current and future conditions for that city
+
 $(document).on("click", ".list-group-item", function() {
     var listCity = $(this).text();
     currentCondition(listCity);
 });
 
-// WHEN I open the weather dashboard
-// THEN I am presented with the last searched city forecast
+
 $(document).ready(function() {
     var searchHistoryArr = JSON.parse(localStorage.getItem("city"));
 
@@ -161,4 +147,3 @@ $(document).ready(function() {
     }
 });
 
-Footer
